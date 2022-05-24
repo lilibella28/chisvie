@@ -9,6 +9,8 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, lowercase: true, unique: true },
     password: String,
     photoUrl: String, // string from aws!
+    bio: String,
+    
   },
   {
     timestamps: true,
