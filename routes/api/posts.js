@@ -5,7 +5,7 @@ const multer  = require('multer')
 const upload = multer();// I am here to handle multiform data
 router.post('/', upload.single('photo'), postsCtrl.create);
 router.get('/', postsCtrl.index)
-
+router.delete('/posts/:id', postsCtrl.delete)
 
 
 

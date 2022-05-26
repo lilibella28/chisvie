@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 
 export default function AddPuppyForm(props){
@@ -38,30 +37,18 @@ export default function AddPuppyForm(props){
       <Grid.Column style={{ maxWidth: 450 }}>
         <Segment>
         
-            <Form  autoComplete="off" onSubmit={handleSubmit}>
+            <Form  autoComplete="off">
             
-              <Form.Input
-                  className="form-control"
-                  name="caption"
-                  value={state.caption}
-                  placeholder="What's on your mind?"
-                  onChange={handleChange}
-                  required
-              />   
-              <Form.Input
-                className="form-control"
-                type="file"
-                name="photo"
-                placeholder="upload image"
-                onChange={handleFileInput}
-              />
-               
+            
+             
               <Button
                 type="submit"
                 className="btn"
               >
-                ADD
-              </Button>
+                Create room 
+                {/* when i click here i want to target  */}
+              </Button>   
+             
             </Form>
           </Segment>
       </Grid.Column>

@@ -4,6 +4,7 @@ import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import PostGallery from "../../components/PostGallery/PostGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
+import ChatRoom from "../../components/ChatRoom/ChatRoom"
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likeApi';
 
@@ -101,9 +102,16 @@ export default function Feed({user, handleLogout}) {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
+          <ChatRoom />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        
+      <Grid.Column style={{ maxWidth: 450 }}>
           <AddPostForm handleAddPost={handleAddPost} />
         </Grid.Column>
       </Grid.Row>
+      
       <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
           <PostGallery

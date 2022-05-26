@@ -13,8 +13,6 @@ import { useParams } from "react-router-dom";
 
 
 
-
-
 export default function ProfilePage(props) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -26,10 +24,8 @@ export default function ProfilePage(props) {
   async function addLike(postId){
     try {
       const data = await likesAPI.create(postId)
-      console.log(data, ' <- the response from the server when we make a like');
-      getProfile(); // <- to go get the updated posts with the like
+      getProfile(); 
     } catch(err){
-      console.log(err)
       setError(err.message)
     }
   }
@@ -37,11 +33,10 @@ export default function ProfilePage(props) {
   async function removeLike(likeId){
     try {
       const data = await likesAPI.removeLike(likeId);
-      console.log(data, '<-  this is the response from the server when we remove a like')
+
       getProfile()
       
     } catch(err){
-      console.log(err);
       setError(err.message);
     }
   }
@@ -53,7 +48,6 @@ export default function ProfilePage(props) {
       setUser(() => data.user);
       setPosts(() => data.posts);
     } catch (err) {
-      console.log(err);
       setError("Profile Doesn't exists");
     }
   }

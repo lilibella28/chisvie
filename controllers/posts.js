@@ -8,7 +8,7 @@ const s3 = new S3();
 module.exports = {
     create,
     index,
-    deletePost
+    delete: deletePost
 }
 
 function create(req, res){
@@ -26,7 +26,7 @@ function create(req, res){
         res.json({data: err})
     }
 }
-function deletePost(req, res){
+ async function deletePost(req, res){
     try {
         
         const post = await Post.findOne({'posts._id': req.params.id});
