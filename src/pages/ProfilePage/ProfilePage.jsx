@@ -20,7 +20,6 @@ export default function ProfilePage(props) {
   const [error, setError] = useState("");
   const [user, setUser] = useState({});
   const [posts, setPosts] = useState([]);
-  // We need to grab the username out of the url,
   const { username } = useParams();
 
 
@@ -50,19 +49,17 @@ export default function ProfilePage(props) {
   async function getProfile() {
     try {
       const data = await userService.getProfile(username);
-      console.log(data, " < -- data");
       setLoading(() => false);
       setUser(() => data.user);
       setPosts(() => data.posts);
     } catch (err) {
       console.log(err);
-      setError("Profile Doesn't exists, CHECK YOUR TERMINAL FOR EXPRESS!");
+      setError("Profile Doesn't exists");
     }
   }
 
 
-  // then when the component loads we can use that username to fetch all the users data
-  // then we can store that in state
+  
   useEffect(() => {
     getProfile();
   }, []);

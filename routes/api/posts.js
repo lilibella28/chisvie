@@ -2,12 +2,11 @@ const express = require('express');
 const router = express.Router();
 const postsCtrl = require('../../controllers/posts');
 const multer  = require('multer')
-const upload = multer(); // <- handles multipart/formdata requests(photos)
-// /*---------- Public Routes ----------*/
+const upload = multer();// I am here to handle multiform data
 router.post('/', upload.single('photo'), postsCtrl.create);
 router.get('/', postsCtrl.index)
 
 
-/*---------- Protected Routes ----------*/
+
 
 module.exports = router;

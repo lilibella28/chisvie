@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import PageHeader from "../../components/Header/Header";
 import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import PostGallery from "../../components/PostGallery/PostGallery";
@@ -26,7 +25,6 @@ export default function Feed({user, handleLogout}) {
       const data = await likesAPI.create(postId)
       getPosts(); 
     } catch(err){
-      console.log(err)
       setError(err.message)
     }
   }
@@ -37,7 +35,6 @@ export default function Feed({user, handleLogout}) {
       getPosts()
       
     } catch(err){
-      console.log(err);
       setError(err.message);
     }
   }
@@ -62,11 +59,10 @@ export default function Feed({user, handleLogout}) {
   async function getPosts() {
     try {
       const data = await postsAPI.getAll();
-      console.log(data, " this is data,");
+     
       setPosts([...data.posts]);
       setLoading(false);
     } catch (err) {
-      console.log(err.message, " this is the error");
       setError(err.message);
     }
   }
@@ -124,3 +120,4 @@ export default function Feed({user, handleLogout}) {
     </Grid>
   );
 }
+
