@@ -39,7 +39,12 @@ export default function AddPuppyForm(props){
         
             <Form  autoComplete="off">
             
-            
+            <Form.Input
+                className="form-control"
+                type="text"
+                placeholder="Room Name"
+                
+              />
              
               <Button
                 type="submit"

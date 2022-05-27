@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
-
+import '../AddPostForm/AddPostForm.css'
 export default function AddPuppyForm(props){
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
@@ -40,14 +40,16 @@ export default function AddPuppyForm(props){
         
             <Form  autoComplete="off" onSubmit={handleSubmit}>
             
-              <Form.Input
+              <Form.TextArea
+              rows={2}
                   className="form-control"
                   name="caption"
                   value={state.caption}
                   placeholder="What's on your mind?"
                   onChange={handleChange}
                   required
-              />   
+              /> 
+              
               <Form.Input
                 className="form-control"
                 type="file"
@@ -55,13 +57,14 @@ export default function AddPuppyForm(props){
                 placeholder="upload image"
                 onChange={handleFileInput}
               />
-               
+               <Segment.Inline>
               <Button
                 type="submit"
                 className="btn"
               >
                 ADD
               </Button>
+              </Segment.Inline>  
             </Form>
           </Segment>
       </Grid.Column>

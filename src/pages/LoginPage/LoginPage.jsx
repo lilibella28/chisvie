@@ -3,6 +3,7 @@ import "./LoginPage.css";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
+import '../LoginPage/LoginPage.css'
 import {
   Button,
   Form,
@@ -45,6 +46,7 @@ export default function LoginPage(props) {
 
   return (
     <>
+   
       <Grid
         textAlign="center"
        
@@ -55,7 +57,7 @@ export default function LoginPage(props) {
             <Image src="https://i.imgur.com/yPoEdxZ.png" size='medium' circular/> Log-in to your
             account
           </Header>
-          <Form autoComplete="off" onSubmit={handleSubmit}>
+          <Form autoComplete="off" onSubmit={handleSubmit} className="LoginForm">
             <Segment stacked>
               <Form.Input
                 type="email"
@@ -73,19 +75,19 @@ export default function LoginPage(props) {
                 onChange={handleChange}
                 required
               />
-              <Button
+              <Button primary
                 color="red"
                 fluid
                 size="large"
                 type="submit"
                 className="btn"
               >
-                Login
+                Sign In
               </Button>
             </Segment>
           </Form>
           <Message>
-            <Link to="/signup">Sign Up</Link>
+           New to Chevies? <Link to="/signup">Sign up now</Link>
           </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Grid.Column>

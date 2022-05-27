@@ -6,7 +6,9 @@ function ProfileBio({ user }) {
     <Grid textAlign="center" columns={2}>
       <Grid.Row>
         <Grid.Column>
-          <Image
+          
+           <Segment textAlign="left">
+           <Image
             src={`${
               user.photoUrl
                 ? user.photoUrl
@@ -15,14 +17,12 @@ function ProfileBio({ user }) {
             avatar
             size="small"
           />
-        </Grid.Column>
-        <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
-          <Segment vertical>
-            <h3>{user.username}</h3>
-          </Segment>
-          <Segment>
+          <h1>{user.username}</h1>
             <span> Bio: {user.bio}</span>
           </Segment>
+        </Grid.Column>
+        <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
+         
         </Grid.Column>
       </Grid.Row>
     </Grid>

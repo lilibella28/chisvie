@@ -1,8 +1,10 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-function PostCard({ post, isProfile, removeLike, addLike, user }) {
+import '../PostCard/PostCard.css'
+function PostCard({ post, isProfile, removeLike, deletePost, addLike, user }) {
   
+ 
   const likeIndex = post.likes.findIndex(
     (like) => like.username === user.username
   );
@@ -15,7 +17,7 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
 
   const likeColor = likeIndex > -1 ? "red" : "grey";
 
- 
+  
   return (
     <Card key={post._id} raised>
       {isProfile ? (
@@ -44,6 +46,11 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
         <Card.Description>{post.caption}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
+        <Icon
+        name={"delete"}
+        size="large"
+        onClick={deleteMe}
+        />
       <Icon
           name={"comment alternate outline"}
           size="large"

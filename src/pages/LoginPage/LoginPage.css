@@ -1,0 +1,11 @@
+.ui.primary.button{
+ border: none;
+ width: 100px;
+ background-color: red;
+ margin: 0 auto;
+}
+
+.ui.primary.button:hover{
+    background-color:rgb(1, 24, 6);
+}
+
